@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример класса в JavaScript</title>
+</head>
+<body>
+    <h1>Создание и использование объектов</h1>
+    <script>
+        class NewClass {
+            constructor(title, url) {
+                this.title = title; 
+                this.url = url;     
+            }
+            show() {
+                document.write(<h2>${this.title}</h2>);
+                document.write(<p>Ссылка: <a href="${this.url}" target="_blank">${this.url}</a></p>);
+            }
+        }
+        const myObject = new NewClass("Пример заголовка", "https://example.com");
+        myObject.show();
+    </script>
+</body>
+</html>
