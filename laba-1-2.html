@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица умножения 10x10</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">Таблица умножения 10x10</h1>
+
+<table>
+    <tbody>
+        <script>
+            for (let i = 1; i <= 10; i++) {
+                document.write('<tr>');
+                for (let j = 1; j <= 10; j++) {
+                    document.write('<td>' + (i * j) + '</td>');
+                }
+                document.write('</tr>');
+            }
+        </script>
+    </tbody>
+</table>
+
+</body>
+</html>
+

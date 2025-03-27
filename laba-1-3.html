@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упражнение 3</title>
+</head>
+<body>
+    <h1>Определение формы слова "день"</h1>
+    
+    <label for="daysInput">Введите количество дней:</label>
+    <input type="number" id="daysInput" value="1" min="0">
+    <button id="checkButton">Показать результат</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getDayForm(n) {
+            if (n % 10 === 1 && n % 100 !== 11) {
+                return 'день';
+            } else if ((n % 10 >= 2 && n % 10 <= 4) && (n % 100 < 12 || n % 100 > 14)) {
+                return 'дня';
+            } else {
+                return 'дней';
+            }
+        }
+
+        document.getElementById('checkButton').onclick = function() {
+            const days = parseInt(document.getElementById('daysInput').value, 10);
+            const dayForm = getDayForm(days);
+            document.getElementById('result').innerText = До конца вашей учебы остается ${days} ${dayForm}.;
+        };
+    </script>
+</body>
+</html>
