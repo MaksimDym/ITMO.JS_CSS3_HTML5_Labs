@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с окнами в JavaScript</title>
+</head>
+<body>
+    <h1>Упражнение 3: Работа с окнами в JavaScript</h1>
+    <a href="#" id="openWindow">Новое окно</a>
+
+    <script>
+        document.getElementById('openWindow').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            window.open(
+                'https://www.ya.ru',
+                'newWindow', 
+                'width=300,height=400,menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes' 
+            );
+        });
+    </script>
+</body>
+</html>
