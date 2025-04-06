@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Советы путешественникам</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Советы путешественникам</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="attractions.html">Достопримечательности</a></li>
+                <li><a href="gallery.html">Видео и аудио</a></li>
+                <li><a href="tips.html">Советы путешественникам</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tipsSection">
+            <h2>Полезные советы для путешествий по России:</h2>
+
+            <!-- Список советов -->
+            <ul class="tips-list">
+                <li>Планируйте поездки заранее.</li>
+                <li>Изучите культуру и традиции местных жителей.</li>
+                <li>Обязательно попробуйте местную кухню.</li>
+                <!-- Добавление новых советов через форму -->
+                <form id="tipForm">
+                    <label for="newTip">Добавить новый совет:</label><br>
+                    <input type="text" id="newTip" required><br>
+                    <button type="submit">Добавить совет</button>
+                </form>
+
+                <!-- Скрипт для добавления нового совета -->
+                <script>
+                    document.getElementById('tipForm').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        const newTip = document.getElementById('newTip').value;
+                        const li = document.createElement('li');
+                        li.textContent = newTip;
+                        document.querySelector('.tips-list').appendChild(li);
+                        document.getElementById('newTip').value = '';
+                    });
+                </script>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Путешествия по России</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Достопримечательности России</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Достопримечательности России</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="attractions.html">Достопримечательности</a></li>
+                <li><a href="gallery.html">Видео и аудио</a></li>
+                <li><a href="tips.html">Советы путешественникам</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Популярные места для посещения</h2>
+
+            <article>
+                <h3>Красная площадь</h3>
+                <p>Одна из самых известных площадей в мире, расположенная в центре Москвы.</p>
+                <img src="red_square.jpg" alt="Красная площадь" class="attraction-image">
+            </article>
+
+            <article>
+                <h3>Эрмитаж</h3>
+                <p>Мировая сокровищница искусства в Санкт-Петербурге.</p>
+                <img src="ermitage.jpg" alt="Эрмитаж" class="attraction-image">
+            </article>
+
+            <form id="feedbackForm">
+                <label for="feedback">Уже бывали там? Оставьте отзыв:</label><br>
+                <textarea id="feedback" name="feedback" required></textarea><br>
+                <button type="submit">Отправить</button>
+            </form>
+
+            <script>
+                document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const feedback = document.getElementById('feedback').value;
+                    localStorage.setItem('userFeedback', feedback);
+                    alert('Спасибо за ваш отзыв!');
+                });
+            </script>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Путешествия по России</p>
+    </footer>
+</body>
+</html>
