@@ -22,19 +22,24 @@
 
     <main>
         <section id="tipsSection">
-            <h2>Полезные советы для путешествий по России:<
+            <h2>Полезные советы для путешествий по России:</h2>
             <ul class="tips-list">
                 <li>Планируйте поездки заранее.</li>
                 <li>Изучите культуру и традиции местных жителей.</li>
                 <li>Обязательно попробуйте местную кухню.</li>
+            </ul>
+
+            <form name="tipForm">
+                <label for="newTip">Добавить новый совет:</label><br>
+                <input type="text" id="newTip" required><br>
+                <button type="submit">Добавить совет</button>
+            </form>
+
+            <script>
+                var forms = document.getElementsByName('tipForm');
                 
-                <form id="tipForm">
-                    <label for="newTip">Добавить новый совет:</label><br>
-                    <input type="text" id="newTip" required><br>
-                    <button type="submit">Добавить совет</button>
-                </form>
-                <script>
-                    document.getElementById('tipForm').addEventListener('submit', function(event) {
+                if (forms.length > 0) {
+                    forms[0].addEventListener('submit', function(event) {
                         event.preventDefault();
                         const newTip = document.getElementById('newTip').value;
                         const li = document.createElement('li');
@@ -42,9 +47,10 @@
                         document.querySelector('.tips-list').appendChild(li);
                         document.getElementById('newTip').value = '';
                     });
-                </script>
-
-            </ul>
+                } else {
+                    console.error('Форма не найдена');
+                }
+            </script>
 
         </section>
 
