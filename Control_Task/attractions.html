@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -36,19 +36,25 @@
                 <img src="ermitage.jpg" alt="Эрмитаж" class="attraction-image">
             </article>
 
-            <form id="feedbackForm">
+            <form name="feedbackForm">
                 <label for="feedback">Уже бывали там? Оставьте отзыв:</label><br>
                 <textarea id="feedback" name="feedback" required></textarea><br>
                 <button type="submit">Отправить</button>
             </form>
 
             <script>
-                document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    const feedback = document.getElementById('feedback').value;
-                    localStorage.setItem('userFeedback', feedback);
-                    alert('Спасибо за ваш отзыв!');
-                });
+              
+                var forms = document.getElementsByName('feedbackForm');
+                if (forms.length > 0) {
+                    forms[0].addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        const feedback = document.getElementById('feedback').value;
+                        localStorage.setItem('userFeedback', feedback);
+                        alert('Спасибо за ваш отзыв!');
+                    });
+                } else {
+                    console.error('Форма не найдена');
+                }
             </script>
 
         </section>
@@ -59,3 +65,4 @@
     </footer>
 </body>
 </html>
+
